@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Escape Room – Stanza 1</title>
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/story.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script1.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/story.js"></script>
+</head>
+
+<body>    
+    <!-- Overlay storia -->
+    <div id="storyContainer">
+      <div class="story-inner">
+        <div class="story-page active" id="page1">
+          <p class="story-text">Benvenuto nell'escape Room! Davanti a te troverai 3 sfide sulle reti per raggiungere la prossima stanza misteriosa.</p>
+          <div class="story-nav">
+            <button id="nextStory">Avanti &rarr;</button>
+          </div>
+        </div>
+        <div class="story-page" id="page2">
+          <p class="story-text">Il tempo scorre veloce, e ogni indizio è unico e limitato. Sii saggio nell'usarli, perché ne hai solo tre.</p>
+          <div class="story-nav">
+            <button id="prevStory2">&larr; Indietro</button>
+            <button id="nextStory2">Avanti &rarr;</button>
+          </div>
+        </div>
+        <div class="story-page" id="page3">
+          <p class="story-text">Metti in ordine le reti per grandezza, preparati poi a costruire la rete perfetta: switch, PC e collegamenti ti attendono in un labirinto di cavi luminosi. Infine, indovina la parola!</p>
+          <div class="story-nav">
+            <button id="prevStory3">&larr; Indietro</button>
+            <button id="startGame">Start</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="timer">
+        <div id="timeText">⏱ Tempo: 00:00</div>
+        <div id="progress">
+            <div id="progressBar"></div>
+        </div>
+        <div id="hintCounter">Indizi usati: 0</div>
+    </div>
+
+    <h1>💡 Escape Room: Giochi sulle Reti</h1>
+
+    <!-- Gioco1 -->
+    <div class="section" id="game1">
+        <h2>🧩 Gioco 1: Ordina le Reti per Estensione</h2>
+        <p>Trascina le reti nella giusta sequenza (dal più piccolo al più esteso):</p>
+        <div class="events" id="eventsContainer">
+            <div class="event" id="WAN" draggable="true">WAN</div>
+            <div class="event" id="GAN" draggable="true">GAN</div>
+            <div class="event" id="LAN" draggable="true">LAN</div>
+            <div class="event" id="MAN" draggable="true">MAN</div>
+            <div class="event" id="WLAN" draggable="true">WLAN</div>
+            <div class="event" id="PAN" draggable="true">PAN</div>
+        </div>
+        <div class="timeline" id="slotsContainer">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+        </div>
+        <button id="checkOrderBtn">Verifica ordine</button>
+        <button id="hint1">Suggerimento</button>
+        <div id="result1"></div>
+    </div>
+
+    <!-- Gioco2 -->
+    <div class="section" id="game2">
+        <h2>🧩 Gioco 2: Costruisci la Rete!</h2>
+        <p>Costruisci una rete a stella estesa</p>
+        <div id="workspace">
+            <svg id="svgLines"></svg>
+            <div class="device" id="pc1">PC 1</div>
+            <div class="device" id="pc2">PC 2</div>
+            <div class="device" id="pc3">PC 3</div>
+            <div class="device" id="pc4">PC 4</div>
+            <div class="device" id="pc5">PC 5</div>
+            <div class="device" id="sw1">Switch CNTRL</div>
+            <div class="device" id="sw2">Switch A</div>
+            <div class="device" id="sw3">Switch B</div>
+        </div>
+        <button id="testNetworkBtn">Testa la rete</button>
+        <button id="hint2">Suggerimento</button>
+        <div id="hintText2"></div>
+        <div id="result2"></div>
+    </div>
+
+    <!-- Gioco3 Wordle -->
+    <div class="section" id="wordle">
+        <h2>🧩 Gioco 3: Wordle</h2>
+        <p>Indovina la parola a 6 lettere in 6 tentativi.</p>
+        <div id="tabellaWordle"></div>
+        <input type="text" id="inputWordle" placeholder="Parola a 6 lettere">
+        <button id="bottoneWordle">Invia</button>
+        <button id="hint3">Suggerimento</button>
+        <div id="hintText3" style="text-align:center; margin-top:10px; font-size:1rem; color:#ffcc00;"></div>
+        <div id="risultatoWordle"></div>
+    </div>
+
+    <button id="nextRoom">Prossima Stanza &rarr;</button>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+/* Overlay story */
+    #storyContainer {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+    .story-inner {
+        max-width: 800px;
+        background: #111;
+        border: 2px solid #00ffcc;
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .story-page { display: none; }
+    .story-page.active { display: block; }
+    .story-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        text-align: justify;
+    }
+    .story-nav {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .story-nav button {
+        background: #00ffcc;
+        color: #000;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
